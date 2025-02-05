@@ -244,16 +244,10 @@ class Ldtk {
             return;
         }
 
-        /**
-         * @type {Array<[number, string]>}
-         */
-        const definitions = /** @type {Array<[number, string]>} */(definition.intGridValues
-        .map(($definition) => ([$definition.value, $definition.identifier])));
-
         return {
 
             $data: [...layer.intGridCsv],
-            $definitions: new Map(definitions),
+            $definitions: new Map(definition.intGridValues.map(($definition) => ([$definition.value, $definition.identifier]))),
             $cell: new Vector2(layer.__gridSize, layer.__gridSize),
             $width: layer.__cWid,
             $height: layer.__cHei,
