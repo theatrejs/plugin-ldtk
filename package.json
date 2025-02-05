@@ -1,6 +1,6 @@
 {
     "author": "Alexandre Blondeau",
-    "description": "🛠️ A Plugin for LDTK JDON data.",
+    "description": "🛠️ A Plugin for LDTK JSON data.",
     "devDependencies": {
 
         "docdash": "2.0.2",

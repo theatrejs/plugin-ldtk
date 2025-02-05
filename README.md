@@ -2,7 +2,7 @@
 
 # LDTK Plugin
 
-> *🛠️ A Plugin for LDTK JDON data.*
+> *🛠️ A Plugin for LDTK JSON data.*
 
 ## Installation
 
