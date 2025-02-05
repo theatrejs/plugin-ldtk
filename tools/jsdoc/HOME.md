@@ -29,5 +29,3 @@ const grid = ldtk.getGrid({
     $layer: 'grid'
 });
 ```
-
-## [API](https://theatrejs.github.io/plugin-ldtk/index.html)

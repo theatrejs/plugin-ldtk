@@ -1,0 +1,58 @@
+{
+    "author": "Alexandre Blondeau",
+    "description": "🛠️ A Plugin for LDTK JDON data.",
+    "devDependencies": {
+
+        "docdash": "2.0.2",
+        "jsdoc": "4.0.3"
+    },
+    "engines": {
+
+        "node": "16.13.0",
+        "npm": "8.1.0"
+    },
+    "files": [
+
+        "sources/"
+    ],
+    "homepage": "https://github.com/theatrejs/plugin-ldtk",
+    "keywords": [
+
+        "2d",
+        "canvas",
+        "engine",
+        "game",
+        "game-engine",
+        "html",
+        "html5",
+        "javascript",
+        "ldtk",
+        "pixel-art",
+        "plugin",
+        "theatrejs",
+        "theatrejs-plugin",
+        "webgl",
+        "webgl2"
+    ],
+    "license": "MIT",
+    "main": "./sources/index.js",
+    "name": "@theatrejs/plugin-ldtk",
+    "peerDependencies": {
+
+        "@theatrejs/theatrejs": ">= 1.12.0"
+    },
+    "repository": {
+
+        "type": "git",
+        "url": "git+https://github.com/theatrejs/plugin-ldtk.git"
+    },
+    "scripts": {
+
+        "github-pages": "npm run github-pages:clean && npm run github-pages:generate ",
+        "github-pages:clean": "rm -rf ./docs/",
+        "github-pages:generate": "jsdoc ./tools/jsdoc/HOME.md ./sources/ --recurse --destination ./docs/ --template ./node_modules/docdash --configure ./tools/jsdoc/jsdoc.config.json",
+        "postversion": "node ./tools/custom/postversion.cjs"
+    },
+    "type": "module",
+    "version": "0.0.0"
+}
