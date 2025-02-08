@@ -13,11 +13,11 @@ npm install @theatrejs/plugin-ldtk --save
 ## Quick Start
 
 ```javascript
-import * as PLUGINLDTK from '@theatrejs/plugin-ldtk';
+import * as PLUGIN_LDTK from '@theatrejs/plugin-ldtk';
 
 import ldtkData from './ldtk.json';
 
-const ldtk = new PLUGINLDTK.Ldtk(ldtkData);
+const ldtk = new PLUGIN_LDTK.Ldtk(ldtkData);
 
 const entities = ldtk.getEntities({
     $level: 'Prototype',
