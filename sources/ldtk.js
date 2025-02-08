@@ -11,103 +11,103 @@ import {Vector2} from '@theatrejs/theatrejs';
 class Ldtk {
 
     /**
-     * @typedef {Object} typeentity A transformed LDTK JSON entity.
-     * @property {string} typeentity.$identifier The identifier.
-     * @property {Vector2} typeentity.$position The position.
-     * @property {string} typeentity.$type The type.
+     * @typedef {Object} TypeEntity A transformed LDTK JSON entity.
+     * @property {string} TypeEntity.$identifier The identifier.
+     * @property {Vector2} TypeEntity.$position The position.
+     * @property {string} TypeEntity.$type The type.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typegrid A transformed LDTK JSON grid.
-     * @property {Vector2} typegrid.$cell The size of each cell.
-     * @property {Array<number>} typegrid.$data The flat data (one-dimensional).
-     * @property {Map<number, string>} typegrid.$definitions The data definitions.
-     * @property {number} typegrid.$height The number of cells on the y-axis.
-     * @property {Vector2} typegrid.$position The position.
-     * @property {number} typegrid.$width The number of cells on the x-axis.
+     * @typedef {Object} TypeGrid A transformed LDTK JSON grid.
+     * @property {Vector2} TypeGrid.$cell The size of each cell.
+     * @property {Array<number>} TypeGrid.$data The flat data (one-dimensional).
+     * @property {Map<number, string>} TypeGrid.$definitions The data definitions.
+     * @property {number} TypeGrid.$height The number of cells on the y-axis.
+     * @property {Vector2} TypeGrid.$position The position.
+     * @property {number} TypeGrid.$width The number of cells on the x-axis.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtkdefinitionlayergridvalue A LDTK JSON data layer grid value definition.
-     * @property {string} typeldtkdefinitionlayergridvalue.identifier The identifier.
-     * @property {number} typeldtkdefinitionlayergridvalue.value The value.
+     * @typedef {Object} TypeLdtkDefinitionLayerGridValue A LDTK JSON data layer grid value definition.
+     * @property {string} TypeLdtkDefinitionLayerGridValue.identifier The identifier.
+     * @property {number} TypeLdtkDefinitionLayerGridValue.value The value.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtkdefinitionlayer A LDTK JSON data layer definition.
-     * @property {string} typeldtkdefinitionlayer.identifier The identifier.
-     * @property {Array<typeldtkdefinitionlayergridvalue>} typeldtkdefinitionlayer.intGridValues The grid values.
+     * @typedef {Object} TypeLdtkDefinitionLayer A LDTK JSON data layer definition.
+     * @property {string} TypeLdtkDefinitionLayer.identifier The identifier.
+     * @property {Array<TypeLdtkDefinitionLayerGridValue>} TypeLdtkDefinitionLayer.intGridValues The grid values.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtkdefinitions A LDTK JSON data definition.
-     * @property {Array<typeldtkdefinitionlayer>} typeldtkdefinitionlayer.layers The layers' definitions.
+     * @typedef {Object} TypeLdtkDefinitions A LDTK JSON data definition.
+     * @property {Array<TypeLdtkDefinitionLayer>} TypeLdtkDefinitionLayer.layers The layers' definitions.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtkentityfield A LDTK JSON data custom field.
-     * @property {string} typeldtkentityfield.__identifier The identifier.
-     * @property {string} typeldtkentityfield.__type The type.
-     * @property {any} typeldtkentityfield.__value The value.
+     * @typedef {Object} TypeLdtkEntityField A LDTK JSON data custom field.
+     * @property {string} TypeLdtkEntityField.__identifier The identifier.
+     * @property {string} TypeLdtkEntityField.__type The type.
+     * @property {any} TypeLdtkEntityField.__value The value.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtkentity A LDTK JSON data entity.
-     * @property {string} typeldtkentity.__identifier The identifier.
-     * @property {Array<typeldtkentityfield>} typeldtkentity.fieldInstances The custom fields.
-     * @property {string} typeldtkentity.iid The iid.
-     * @property {Array<number>} typeldtkentity.px The position.
+     * @typedef {Object} TypeLdtkEntity A LDTK JSON data entity.
+     * @property {string} TypeLdtkEntity.__identifier The identifier.
+     * @property {Array<TypeLdtkEntityField>} TypeLdtkEntity.fieldInstances The custom fields.
+     * @property {string} TypeLdtkEntity.iid The iid.
+     * @property {Array<number>} TypeLdtkEntity.px The position.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtklayer A LDTK JSON data layer.
-     * @property {number} typeldtklayer.__cHei The number of grid cells on the x-axis.
-     * @property {number} typeldtklayer.__cWid The number of grid cells on the y-axis.
-     * @property {number} typeldtklayer.__gridSize The size of each cell.
-     * @property {string} typeldtklayer.__identifier The identifier.
-     * @property {Array<typeldtkentity>} typeldtklayer.entityInstances The entities.
-     * @property {Array<number>} typeldtklayer.intGridCsv The grid values.
+     * @typedef {Object} TypeLdtkLayer A LDTK JSON data layer.
+     * @property {number} TypeLdtkLayer.__cHei The number of grid cells on the x-axis.
+     * @property {number} TypeLdtkLayer.__cWid The number of grid cells on the y-axis.
+     * @property {number} TypeLdtkLayer.__gridSize The size of each cell.
+     * @property {string} TypeLdtkLayer.__identifier The identifier.
+     * @property {Array<TypeLdtkEntity>} TypeLdtkLayer.entityInstances The entities.
+     * @property {Array<number>} TypeLdtkLayer.intGridCsv The grid values.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtklevel A LDTK JSON data level.
-     * @property {string} typeldtklevel.identifier The identifier.
-     * @property {Array<typeldtklayer>} typeldtklevel.layerInstances The layers.
-     * @property {number} typeldtklevel.pxHei The height.
-     * @property {number} typeldtklevel.pxWid The width.
+     * @typedef {Object} TypeLdtkLevel A LDTK JSON data level.
+     * @property {string} TypeLdtkLevel.identifier The identifier.
+     * @property {Array<TypeLdtkLayer>} TypeLdtkLevel.layerInstances The layers.
+     * @property {number} TypeLdtkLevel.pxHei The height.
+     * @property {number} TypeLdtkLevel.pxWid The width.
      * @protected
      *
      * @memberof Ldtk
      */
 
     /**
-     * @typedef {Object} typeldtk A LDTK JSON data.
-     * @property {typeldtkdefinitions} typeldtk.defs The definitions.
-     * @property {Array<typeldtklevel>} typeldtk.levels The delevs.
+     * @typedef {Object} TypeLdtk A LDTK JSON data.
+     * @property {TypeLdtkDefinitions} TypeLdtk.defs The definitions.
+     * @property {Array<TypeLdtkLevel>} TypeLdtk.levels The delevs.
      * @protected
      *
      * @memberof Ldtk
@@ -115,14 +115,14 @@ class Ldtk {
 
     /**
      * Stores the LDTK JSON data.
-     * @type {typeldtk}
+     * @type {TypeLdtk}
      * @private
      */
     $data;
 
     /**
      * Gets the LDTK JSON data.
-     * @type {typeldtk}
+     * @type {TypeLdtk}
      * @public
      */
     get data() {
@@ -132,7 +132,7 @@ class Ldtk {
 
     /**
      * Creates a new LDTK module manager.
-     * @param {typeldtk} $data The LDTK JSON data.
+     * @param {TypeLdtk} $data The LDTK JSON data.
      */
     constructor($data) {
 
@@ -144,7 +144,7 @@ class Ldtk {
      * @param {Object} $parameters The given parameters.
      * @param {string} $parameters.$layer The layer of the entities to get.
      * @param {string} $parameters.$level The level of the entities to get.
-     * @returns {Array<typeentity>}
+     * @returns {Array<TypeEntity>}
      * @public
      */
     getEntities({$layer, $level}) {
@@ -184,7 +184,7 @@ class Ldtk {
      * @param {Object} $parameters The given parameters.
      * @param {string} $parameters.$layer The layer of the entities to get.
      * @param {string} $parameters.$level The level of the entities to get.
-     * @returns {Array<typeldtkentity>}
+     * @returns {Array<TypeLdtkEntity>}
      * @public
      */
     getEntitiesData({$layer, $level}) {
@@ -215,7 +215,7 @@ class Ldtk {
      * @param {Object} $parameters The given parameters.
      * @param {string} $parameters.$layer The layer of the grid to get.
      * @param {string} $parameters.$level The level of the grid to get.
-     * @returns {(typegrid | undefined)}
+     * @returns {(TypeGrid | undefined)}
      * @public
      */
     getGrid({$layer, $level}) {
@@ -260,7 +260,7 @@ class Ldtk {
      * @param {Object} $parameters The given parameters.
      * @param {string} $parameters.$layer The layer of the grid to get.
      * @param {string} $parameters.$level The level of the grid to get.
-     * @returns {typeldtklayer}
+     * @returns {TypeLdtkLayer}
      * @public
      */
     getGridData({$layer, $level}) {
