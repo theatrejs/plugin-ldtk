@@ -39,7 +39,7 @@
     "name": "@theatrejs/plugin-ldtk",
     "peerDependencies": {
 
-        "@theatrejs/theatrejs": ">= 1.12.0"
+        "@theatrejs/theatrejs": ">= 1.14.0"
     },
     "repository": {
 
