@@ -72,6 +72,7 @@ class Ldtk {
     /**
      * @typedef {Object} TypeLdtkEntity A LDTK JSON data entity.
      * @property {string} TypeLdtkEntity.__identifier The identifier.
+     * @property {Array<number>} TypeLdtkEntity.__grid The grid-based coordinates.
      * @property {Array<TypeLdtkEntityField>} TypeLdtkEntity.fieldInstances The custom fields.
      * @property {string} TypeLdtkEntity.iid The iid.
      * @property {Array<number>} TypeLdtkEntity.px The position.
