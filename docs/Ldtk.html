@@ -31,7 +31,7 @@
     <input type="text" id="nav-search" placeholder="Search" />
     
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Ldtk.html">Ldtk</a><ul class='methods'><li data-type='method'><a href="Ldtk.html#getEntities">getEntities</a></li><li data-type='method'><a href="Ldtk.html#getEntitiesData">getEntitiesData</a></li><li data-type='method'><a href="Ldtk.html#getGrid">getGrid</a></li><li data-type='method'><a href="Ldtk.html#getGridData">getGridData</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Ldtk.html">Ldtk</a><ul class='methods'><li data-type='method'><a href="Ldtk.html#createGrid">createGrid</a></li></ul></li><li><a href="LdtkEntity.html">LdtkEntity</a></li></ul>
     
 </nav>
 
@@ -86,7 +86,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line11">line 11</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -134,7 +134,7 @@
     <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const ldtk = new Ldtk(data);
-ldtk.getEntities({$level, $layer});</code></pre>
+ldtk.createGrid({$level, $layer});</code></pre>
 
 
 
@@ -242,7 +242,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line129">line 129</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line108">line 108</a>
     </li></ul></dd>
     
 
@@ -314,7 +314,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
 
     
 
-    <h4 class="name" id="getEntities"><span class="type-signature"></span>getEntities<span class="signature">($parameters)</span><span class="type-signature"> &rarr; {Array.&lt;TypeEntity>}</span></h4>
+    <h4 class="name" id="createGrid"><span class="type-signature"></span>createGrid<span class="signature">($parameters)</span><span class="type-signature"> &rarr; {Grid.&lt;<a href="LdtkEntity.html">LdtkEntity</a>>}</span></h4>
 
     
 
@@ -324,13 +324,13 @@ ldtk.getEntities({$level, $layer});</code></pre>
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>Gets the entities from the given level on the given layer.</li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li>Creates a grid of LDTK entities from the given level on the given layer.</li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line151">line 151</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -500,616 +500,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;TypeEntity></span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getEntitiesData"><span class="type-signature"></span>getEntitiesData<span class="signature">($parameters)</span><span class="type-signature"> &rarr; {Array.&lt;TypeLdtkEntity>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>Gets the LDTK JSON data entities from the given level on the given layer.</li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line191">line 191</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The given parameters.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters.$layer</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The layer of the entities to get.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters.$level</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The level of the entities to get.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;TypeLdtkEntity></span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getGrid"><span class="type-signature"></span>getGrid<span class="signature">($parameters)</span><span class="type-signature"> &rarr; {TypeGrid|undefined}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>Gets the grid from the given level on the given layer.</li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line222">line 222</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The given parameters.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters.$layer</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The layer of the grid to get.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters.$level</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The level of the grid to get.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">TypeGrid</span>
-|
-
-<span class="param-type">undefined</span>
-
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getGridData"><span class="type-signature"></span>getGridData<span class="signature">($parameters)</span><span class="type-signature"> &rarr; {TypeLdtkLayer}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>Gets the LDTK JSON data layer grid from the given level on the given layer.</li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line267">line 267</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h5 class="h5-parameters">Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The given parameters.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters.$layer</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The layer of the grid to get.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>$parameters.$level</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The level of the grid to get.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5 class="h5-returns">Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">TypeLdtkLayer</span>
+<span class="param-type">Grid.&lt;<a href="LdtkEntity.html">LdtkEntity</a>></span>
 
 
 
@@ -1128,436 +519,6 @@ ldtk.getEntities({$level, $layer});</code></pre>
 
         
                 
-<h4 class="name" id=".TypeEntity">TypeEntity</h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>A transformed LDTK JSON entity.</li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeEntity.$identifier</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The identifier.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeEntity.$position</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Vector2</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The position.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeEntity.$type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The type.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<div class="description usertext">
-    A transformed LDTK JSON entity.
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-            
-                
-<h4 class="name" id=".TypeGrid">TypeGrid</h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>A transformed LDTK JSON grid.</li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line23">line 23</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeGrid.$cell</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Vector2</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The size of each cell.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeGrid.$data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The flat data (one-dimensional).</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeGrid.$definitions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Map.&lt;number, string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The data definitions.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeGrid.$height</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The number of cells on the y-axis.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeGrid.$position</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Vector2</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The position.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>TypeGrid.$width</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The number of cells on the x-axis.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<div class="description usertext">
-    A transformed LDTK JSON grid.
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-            
-                
 <h4 class="name" id=".TypeLdtk">TypeLdtk</h4>
 
 
@@ -1573,7 +534,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line108">line 108</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -1728,7 +689,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line45">line 45</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -1883,7 +844,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line36">line 36</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -2038,7 +999,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line54">line 54</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -2169,7 +1130,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line72">line 72</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line51">line 51</a>
     </li></ul></dd>
     
 
@@ -2396,7 +1357,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line62">line 62</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -2575,7 +1536,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line84">line 84</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -2826,7 +1787,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line97">line 97</a>
+        <a href="ldtk.js.html">ldtk.js</a>, <a href="ldtk.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -3030,7 +1991,7 @@ ldtk.getEntities({$level, $layer});</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.3</a> on Thu Jan 01 2026 14:04:49 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.3</a> on Sun Jan 04 2026 13:36:25 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
