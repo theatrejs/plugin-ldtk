@@ -1,4 +1,6 @@
-import {Vector2} from '@theatrejs/theatrejs';
+import {Grid, Vector2} from '@theatrejs/theatrejs';
+
+import {LdtkEntity} from './index.js';
 
 /**
  * Creates LDTK module managers.
@@ -6,32 +8,9 @@ import {Vector2} from '@theatrejs/theatrejs';
  * @example
  *
  * const ldtk = new Ldtk(data);
- * ldtk.getEntities({$level, $layer});
+ * ldtk.createGrid({$level, $layer});
  */
 class Ldtk {
-
-    /**
-     * @typedef {Object} TypeEntity A transformed LDTK JSON entity.
-     * @property {string} TypeEntity.$identifier The identifier.
-     * @property {Vector2} TypeEntity.$position The position.
-     * @property {string} TypeEntity.$type The type.
-     * @protected
-     *
-     * @memberof Ldtk
-     */
-
-    /**
-     * @typedef {Object} TypeGrid A transformed LDTK JSON grid.
-     * @property {Vector2} TypeGrid.$cell The size of each cell.
-     * @property {Array<number>} TypeGrid.$data The flat data (one-dimensional).
-     * @property {Map<number, string>} TypeGrid.$definitions The data definitions.
-     * @property {number} TypeGrid.$height The number of cells on the y-axis.
-     * @property {Vector2} TypeGrid.$position The position.
-     * @property {number} TypeGrid.$width The number of cells on the x-axis.
-     * @protected
-     *
-     * @memberof Ldtk
-     */
 
     /**
      * @typedef {Object} TypeLdtkDefinitionLayerGridValue A LDTK JSON data layer grid value definition.
@@ -141,21 +120,26 @@ class Ldtk {
     }
 
     /**
-     * Gets the entities from the given level on the given layer.
+     * Creates a grid of LDTK entities from the given level on the given layer.
      * @param {Object} $parameters The given parameters.
      * @param {string} $parameters.$layer The layer of the entities to get.
      * @param {string} $parameters.$level The level of the entities to get.
-     * @returns {Array<TypeEntity>}
+     * @returns {Grid<LdtkEntity>}
      * @public
      */
-    getEntities({$layer, $level}) {
+    createGrid({$layer, $level}) {
+
+        /**
+         * @type {Grid<LdtkEntity>}
+         */
+        const grid = new Grid();
 
         const level = this.$data.levels
         .find(($current) => ($current.identifier === $level));
 
         if (typeof level === 'undefined') {
 
-            return [];
+            return grid;
         }
 
         const layer = level
@@ -163,126 +147,24 @@ class Ldtk {
 
         if (typeof layer === 'undefined') {
 
-            return [];
+            return grid;
         }
 
-        return layer
-        .entityInstances
-        .map(($entity) => ({
+        layer.entityInstances.forEach(($entity) => {
 
-            $identifier: $entity.iid,
-            $type: $entity.__identifier,
-            $position: new Vector2(
+            const [x, y] = $entity.__grid;
 
-                $entity.px[0] - (level.pxWid / 2),
-                - ($entity.px[1] - (level.pxHei / 2))
-            )
-        }));
-    }
+            const entity = new LdtkEntity({
 
-    /**
-     * Gets the LDTK JSON data entities from the given level on the given layer.
-     * @param {Object} $parameters The given parameters.
-     * @param {string} $parameters.$layer The layer of the entities to get.
-     * @param {string} $parameters.$level The level of the entities to get.
-     * @returns {Array<TypeLdtkEntity>}
-     * @public
-     */
-    getEntitiesData({$layer, $level}) {
+                $data: window.structuredClone($entity.fieldInstances),
+                $identifier: $entity.iid,
+                $label: $entity.__identifier
+            });
 
-        const level = this.$data.levels
-        .find(($current) => ($current.identifier === $level));
+            grid.set(new Vector2(x, y), entity);
+        });
 
-        if (typeof level === 'undefined') {
-
-            return [];
-        }
-
-        const layer = level
-        .layerInstances.find(($current) => ($current.__identifier === $layer));
-
-        if (typeof layer === 'undefined') {
-
-            return [];
-        }
-
-        return layer
-        .entityInstances
-        .map(($entity) => (window.structuredClone($entity)));
-    }
-
-    /**
-     * Gets the grid from the given level on the given layer.
-     * @param {Object} $parameters The given parameters.
-     * @param {string} $parameters.$layer The layer of the grid to get.
-     * @param {string} $parameters.$level The level of the grid to get.
-     * @returns {(TypeGrid | undefined)}
-     * @public
-     */
-    getGrid({$layer, $level}) {
-
-        const level = this.$data.levels
-        .find(($current) => ($current.identifier === $level));
-
-        if (typeof level === 'undefined') {
-
-            return;
-        }
-
-        const layer = level
-        .layerInstances.find(($current) => ($current.__identifier === $layer));
-
-        if (typeof layer === 'undefined') {
-
-            return;
-        }
-
-        const definition = this.$data.defs.layers
-        .find(($current) => ($current.identifier === $layer));
-
-        if (typeof definition === 'undefined') {
-
-            return;
-        }
-
-        return {
-
-            $data: [...layer.intGridCsv],
-            $definitions: new Map(definition.intGridValues.map(($definition) => ([$definition.value, $definition.identifier]))),
-            $cell: new Vector2(layer.__gridSize, layer.__gridSize),
-            $width: layer.__cWid,
-            $height: layer.__cHei,
-            $position: new Vector2(level.pxWid / 2, level.pxHei / 2)
-        };
-    }
-
-    /**
-     * Gets the LDTK JSON data layer grid from the given level on the given layer.
-     * @param {Object} $parameters The given parameters.
-     * @param {string} $parameters.$layer The layer of the grid to get.
-     * @param {string} $parameters.$level The level of the grid to get.
-     * @returns {TypeLdtkLayer}
-     * @public
-     */
-    getGridData({$layer, $level}) {
-
-        const level = this.$data.levels
-        .find(($current) => ($current.identifier === $level));
-
-        if (typeof level === 'undefined') {
-
-            return;
-        }
-
-        const layer = level
-        .layerInstances.find(($current) => ($current.__identifier === $layer));
-
-        if (typeof layer === 'undefined') {
-
-            return;
-        }
-
-        return window.structuredClone(layer);
+        return grid;
     }
 }
 

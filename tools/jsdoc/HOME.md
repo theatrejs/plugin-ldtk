@@ -15,17 +15,10 @@ npm install @theatrejs/plugin-ldtk --save
 ```javascript
 import * as PLUGIN_LDTK from '@theatrejs/plugin-ldtk';
 
-import ldtkData from './ldtk.json';
+import ldtk from './ldtk.json';
 
-const ldtk = new PLUGIN_LDTK.Ldtk(ldtkData);
-
-const entities = ldtk.getEntities({
+const grid = ldtk.createGrid({
     $level: 'Prototype',
     $layer: 'actors'
-});
-
-const grid = ldtk.getGrid({
-    $level: 'Prototype',
-    $layer: 'grid'
 });
 ```
