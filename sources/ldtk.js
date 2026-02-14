@@ -13,6 +13,14 @@ import {LdtkEntity} from './index.js';
 class Ldtk {
 
     /**
+     * @typedef {Object} TypeLdtkDefinitionEntity A LDTK JSON data entity definition.
+     * @property {string} TypeLdtkDefinitionEntity.identifier The identifier.
+     * @protected
+     *
+     * @memberof Ldtk
+     */
+
+    /**
      * @typedef {Object} TypeLdtkDefinitionLayerGridValue A LDTK JSON data layer grid value definition.
      * @property {string} TypeLdtkDefinitionLayerGridValue.identifier The identifier.
      * @property {number} TypeLdtkDefinitionLayerGridValue.value The value.
@@ -32,7 +40,8 @@ class Ldtk {
 
     /**
      * @typedef {Object} TypeLdtkDefinitions A LDTK JSON data definition.
-     * @property {Array<TypeLdtkDefinitionLayer>} TypeLdtkDefinitionLayer.layers The layers' definitions.
+     * @property {Array<TypeLdtkDefinitionEntity>} TypeLdtkDefinitions.entities The entities' definitions.
+     * @property {Array<TypeLdtkDefinitionLayer>} TypeLdtkDefinitions.layers The layers' definitions.
      * @protected
      *
      * @memberof Ldtk
