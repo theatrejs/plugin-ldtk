@@ -4,12 +4,12 @@
     "devDependencies": {
 
         "docdash": "2.0.2",
-        "jsdoc": "4.0.3"
+        "jsdoc": "4.0.5"
     },
     "engines": {
 
-        "node": "18.18.2",
-        "npm": "9.8.1"
+        "node": "24.14.0",
+        "npm": "11.9.0"
     },
     "files": [
 
@@ -39,7 +39,7 @@
     "name": "@theatrejs/plugin-ldtk",
     "peerDependencies": {
 
-        "@theatrejs/theatrejs": ">= 1.25.2"
+        "@theatrejs/theatrejs": ">= 1.32.0"
     },
     "repository": {
 
